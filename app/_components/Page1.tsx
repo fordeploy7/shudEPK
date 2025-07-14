@@ -1,5 +1,6 @@
 import React from 'react';
 import { Instagram, Music, Facebook, Youtube, Volume2, Music2 } from 'lucide-react';
+import { FaSnapchatGhost } from 'react-icons/fa';
 import { dafoe } from '../layout';
 
 const BeccaBartlettPage = () => {
@@ -33,7 +34,7 @@ const BeccaBartlettPage = () => {
               <Volume2 className="w-6 h-6 sm:w-8 sm:h-8" />
             </a>
             <a href="https://www.snapchat.com/@shudhitaaaa" className="text-white hover:text-purple-200 transition-colors duration-300">
-              <Music2 className="w-6 h-6 sm:w-8 sm:h-8" />
+              <FaSnapchatGhost className="w-6 h-6 sm:w-8 sm:h-8" />
             </a>
           </div>
         </header>
