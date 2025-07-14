@@ -24,7 +24,7 @@ const ContactPage: React.FC = () => {
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "100vh",
+          minHeight: "60vh",
           width: "100%",
         }}
       >
@@ -75,9 +75,9 @@ const ContactPage: React.FC = () => {
             </form>
           </div>
         </div>
+      </div>
         <Listen />
         <PressSection />
-      </div>
     </div>
   );
 };
