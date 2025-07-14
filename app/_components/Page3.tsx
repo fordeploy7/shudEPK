@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
               No spam, I promise! Just an opportunity to join the inner circle, and be the first to know about new music, shows and exclusive offers.
             </p>
             <form
-              action="mailto:your-email@example.com"
+              action="mailto:your-shudhitaa1@gmail.com"
               method="POST"
               encType="text/plain"
               onSubmit={handleSubmit}
