@@ -4,10 +4,10 @@ import { archivo } from '../layout';
 export default function BeccaBartlettPage() {
 
   return (
-    <div className="bg-black min-h-screen lg:h-5/6 flex flex-col lg:flex-row">
+    <div className="bg-black min-h-screen lg:h-5/6 flex flex-col lg:flex-row" >
       <div className="w-full lg:w-1/2 relative order-1 lg:order-1">
         <img 
-          src="https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/805562/44598e78edc5a7ad20de8533ec90146c6ecbc88e/original/dsf9681-1.jpg/!!/b%3AW1siZXh0cmFjdCIseyJsZWZ0IjowLCJ0b3AiOjMwMiwid2lkdGgiOjIzODQsImhlaWdodCI6MjM4NH1dLFsicmVzaXplIiwyMDAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg"
+         src={`/images/artist/shudhita_home2.jpeg`}
           alt="Becca Bartlett"
           className="w-full h-64 sm:h-80 md:h-96 lg:w-5/6 lg:h-5/6 object-cover mx-auto lg:mt-10"
         />
@@ -16,37 +16,26 @@ export default function BeccaBartlettPage() {
       <div className="w-full lg:w-1/2 bg-black text-white p-4 sm:p-6 lg:p-5 flex flex-col justify-center relative order-2 lg:order-2">
         <div className={`max-w-full lg:max-w-2lg font-semibold ${archivo.className}`}>
           <p className="text-white leading-relaxed mb-4 sm:mb-6 font-medium text-sm sm:text-base lg:text-lg">
-            Becca Bartlett is a dynamic 21-year-old singer-songwriter and performer from Newfoundland 
-            who enchants audiences with her compelling vocals and masterful lyrical storytelling. Her 
-            unique voice seamlessly blends pop and folk, creating memorable melodies with profound 
-            emotional depth. With a perfect mix of ethereal charm and down-to-earth warmth, Becca's 
-            performances leave a lasting impression on her listeners.
+            Shudhita is a passionate and versatile singer whose soul-stirring voice has been capturing hearts across genres and platforms. Seamlessly weaving house, folk, Punjabi, and spiritual music, her performances carry a rare depth and emotional resonance that linger with listeners long after the music stops.
+
+With an impressive and diverse discography, Shudhita has collaborated with  <span className='text-red-800'>renowned producers IKKY on two widely loved club hits in the house music scene.</span>  Her vocal presence has also graced the Punjabi film industry, lending her voice to <span className='text-red-800'>“Painter” </span> in a powerful duet with the legendary <span className='text-red-800'>Kamal Khan </span>, as well as an English track featured in the film <span className='text-red-800'> “Jalwayu Enclave.”</span>
           </p>
 
           <p className="text-white leading-relaxed mb-4 sm:mb-6 font-medium text-sm sm:text-base lg:text-lg">
-            A nominee for the 2024 MusicNL Pop Artist of the Year, Becca is a versatile performer who 
-            accompanies her songs with guitar, piano, bass, or ukulele. Influenced by artists such as 
-            Hozier, Joni Mitchell, The Beatles, and Kate Bush, she infuses her music with a rich tapestry 
-            of sounds and styles.
+           A prolific duet artist, Shudhita has worked with acclaimed names such as <span className='text-red-800'>NIKK, Sunny Kahlon, and Balvir Boparai, with tracks like “Achi Hai” and “De Lai Geda” </span>garnering millions of streams and views. Her original releases like <span className='text-red-800'>“Rabb Manneya,” “Baarish,” “Tum,”</span> and the recent favorite <span className='text-red-800'>“Nazraan”</span> showcase her ability to craft melodies that are both deeply personal and widely relatable.
           </p>
 
           <p className="text-white leading-relaxed mb-4 sm:mb-6 font-medium text-sm sm:text-base lg:text-lg">
-            Currently studying voice performance with Berklee College of Music, Becca is honing her 
-            craft and collaborating with talented musicians from around the globe.
+          Beyond mainstream music, Shudhita brings her devotion to life through spiritual compositions such as <span className='text-red-800'>“Guru Charna Vich Ho Arpan,” “Kar Tera Deedar,” and “Antallah,”</span> the latter of which she composed and performed in Arabic. Her rendition of the Mool Mantar and the deeply moving shabad dedicated to the Chaar Sahibzaade reflect her spiritual grounding and artistic sincerity.
           </p>
 
           <p className="text-white leading-relaxed mb-4 sm:mb-6 font-medium text-sm sm:text-base lg:text-lg">
-            Becca has earned notable recognition, including the 2021 Focus on Youth Performing 
-            Individual Award from the City of Mount Pearl for her contributions to the local entertainment 
-            scene. Her 2024 ballad "Wrong" won an Arts and Letters Award, and her song "Calypso" was 
-            recorded by NL musician Pete of the acclaimed band "With Violet."
+          Shudhita has also contributed her voice to impactful causes through the <span className='text-red-800'>Sant Nirankari Charitable Foundation </span>, including the anthem <span className='text-red-800'>“Swach Jal Swach Mann”</span> under Project Amrit, and songs dedicated to World Environment Day and the Oneness Vann initiative.
+
+You can explore her growing musical journey on all major streaming platforms and social media. With every performance, Shudhita invites listeners into a world of melody, meaning, and profound connection. ‎
+
           </p>
 
-          <p className="text-white leading-relaxed mb-6 sm:mb-8 font-medium text-sm sm:text-base lg:text-lg">
-            You can explore Becca's growing discography on all streaming platforms and local radio. 
-            Experience the captivating artistry of Becca Bartlett, where each performance promises an 
-            unforgettable journey through melody and emotion.
-          </p>
         </div>
 
        

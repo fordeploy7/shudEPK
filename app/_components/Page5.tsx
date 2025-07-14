@@ -6,7 +6,7 @@ const Page5 = () => {
       id="merch" 
       className="py-20 relative"
       style={{
-        backgroundImage: 'url("https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/805562/05cc6cc9314248eb57f04c7a0b91cb89adff37b7/original/sun-and-moon-in-purple-sky-as4snxrlv8r2084h.jpg/!!/b%3AW1sicmVzaXplIiwzMjAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg")',
+        backgroundImage: 'url("/images/gallery/merchbg.jpg")',
             backgroundAttachment: 'fixed',
             backgroundSize: 'cover',
             backgroundPosition: 'center',

@@ -1,41 +1,84 @@
-import PressSection from "./Press"
+"use client";
 
-const Page3 = () => {
+import PressSection from "./Press";
+import Listen from "./Listen";
+import { useState, FormEvent } from "react";
+
+const ContactPage: React.FC = () => {
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // mailto will open the email client; form submission handled by browser
+    setEmail("");
+    setMessage("");
+  };
+
   return (
-    <div>
-        <div style={{
-            backgroundImage: 'url("https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/805562/8b3613a199b530fa1899f2684d84b59efe5527c6/original/istockphoto-1283536454-612x612.jpg/!!/b%3AW1sicmVzaXplIiwzMjAwXSxbIm1heCJdLFsid2UiXV0%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg")',
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            minHeight: '100vh',
-            width: '100%'
-        }}>
-           <div className="bg-transparent bg-opacity-70 py-16 px-4">
-             <div className="max-w-4xl mx-auto text-center">
-               <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">
-                 Join my mailing list to keep up to date!
-               </h2>
-               <p className="text-white text-sm md:text-base mb-8 max-w-2xl mx-auto">
-                 No spam, I promise! Just an opportunity to join the inner circle, and be the first to know about new music, shows and exclusive offers.
-               </p>
-               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-                 <input
-                   type="email"
-                   placeholder="Your email"
-                   className="w-full bg-white sm:flex-1 px-4 py-3 rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                 />
-                 <button className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-colors duration-300 rounded-md font-semibold">
-                   SIGN UP
-                 </button>
-               </div>
-             </div>
-           </div>
-
-           <PressSection/>
+    <div id="contact">
+      <div
+        style={{
+          backgroundImage:
+            'url("/images/gallery/contact.jpg")',
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh",
+          width: "100%",
+        }}
+      >
+        <div className="bg-transparent bg-opacity-70 py-16 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">
+              CONTACT ME
+            </h2>
+            <p className="text-white text-sm md:text-base mb-8 max-w-2xl mx-auto">
+              No spam, I promise! Just an opportunity to join the inner circle, and be the first to know about new music, shows and exclusive offers.
+            </p>
+            <form
+              action="mailto:your-email@example.com"
+              method="POST"
+              encType="text/plain"
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 justify-center items-center max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                value={email}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setEmail(e.target.value)
+                }
+                className="w-full bg-white px-4 py-3 rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+              <textarea
+                name="body"
+                placeholder="Your message"
+                value={message}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                  setMessage(e.target.value)
+                }
+                className="w-full bg-white px-4 py-3 rounded-md text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                rows={4}
+                required
+              />
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-white-500 text-white-400 hover:bg-purple-500 hover:text-white transition-colors duration-300 rounded-md font-semibold"
+              >
+                SEND EMAIL
+              </button>
+            </form>
+          </div>
         </div>
+        <Listen />
+        <PressSection />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page3
+export default ContactPage;

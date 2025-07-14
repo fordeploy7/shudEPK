@@ -1,44 +1,116 @@
 import React from 'react';
 import Image from 'next/image';
+type VideoPress = {
+  title: string;
+  videoId: string;
+  description: string;
+  type: 'video';
+};
 
+type Mp4Press = {
+  title: string;
+  videoSrc: string;
+  description: string;
+  type: 'mp4';
+};
+
+type ImagePress = {
+  title: string;
+  image: string;
+  link: string;
+  type: 'image';
+};
+type PressItem = VideoPress | ImagePress;
 const PressSection = () => {
-  const pressItems = [
+  const pressItems:PressItem[] = [
     {
-      title: 'NTV Backstage Pass with Amanda Mews',
-      image: 'https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/805562/754692d0d5c0419beccc89e63bd09bdf04925c48/original/screenshot-2024-10-10-at-01-43-52-backstage-pass-highlighting-singer-songwriter-becca-bartlett-ntv.png/!!/b%3AW1siZXh0cmFjdCIseyJsZWZ0IjoxLCJ0b3AiOjEsIndpZHRoIjoxMjIyLCJoZWlnaHQiOjY4Nn1dLFsicmVzaXplIiw2NjBdLFsibWF4Il0sWyJ3ZSJdXQ%3D%3D/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.png',
-      link: 'https://ntv.ca/backstage-pass-highlighting-singer-songwriter-becca-bartlett/',
-      type: 'image'
-    },
-    {
-      title: 'Pharos Music Roster',
-      image: 'https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/805562/71987d76e472af3bbd2d391e27dd25bfbfdcd7d4/original/screenshot-2024-10-10-at-01-32-35-3-facebook.png/!!/b%3AW1siZXh0cmFjdCIseyJsZWZ0IjowLCJ0b3AiOjAsIndpZHRoIjo2MjQsImhlaWdodCI6NjI0fV0sWyJyZXNpemUiLDYyNV0sWyJtYXgiXSxbIndlIl1d/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.png',
-      link: 'https://pharosmusic.ca',
-      type: 'image'
-    },
-    {
-      title: 'The Hulk Caesar Show',
-      videoId: 'RE9zEFtchq8',
-      description: 'Becca Bartlett as Musical Guest on the Hulk Caesar show Featuring Adam Walsh',
+      title: 'I collaborated with the amazing and well known music producer IKKY for two club songs, house music which are being loved by the listeners',
+      videoId: 'dEwj38nw83Y',
+      description: 'I collaborated with the amazing and well known music producer IKKY for two club songs, house music which are being loved by the listeners',
       type: 'video'
+    },
+    {
+    title: 'Achi Hai',
+      videoId: 'BLjDSH0DgOI',
+      description: 'One of my most recent works with the amazing NIKK, a duet ‘Achi hai’ which has been getting so much love.',
+      type: 'video'
+    },
+          {
+    title: 'I collaborated with the amazing and well known music producer IKKY for two club songs, house music which are being loved by the listeners',
+      videoId: 'x1Rm2wP9e-s',
+      description: 'I collaborated with the amazing and well known music producer IKKY for two club songs, house music which are being loved by the listeners',
+      type: 'video'
+    },
+    {
+    title: 'Achi Hai',
+      videoId: 'Mx2K6Py9ybY',
+      description: 'This is my first ever duet with NIKK and has crossed 12 million views now. ',
+      type: 'video'
+    }, 
+    // {
+    //   title: 'Performed at Chandigarh University',
+    //   image: '/images/gallery/performedatCU.jpg',
+    //   link: 'https://pharosmusic.ca',
+    //   type: 'image'
+    // },
+
+  {
+    title: 'I also have sung on two Punjabi movies',
+      videoId: 'GIBqMWau_Nc',
+      description: 'I also have sung on two Punjabi movies:-One of them being ‘Painter’ in which i sang a duet with the one and only Kamal Khan ji. ',
+      type: 'video'
+    }, 
+//  {
+    // title: '2nd Punjabi Movie',
+    //   videoId: 'KgsjJ1GMSgE',
+    //   description: 'I’ve also sung an english song in the movie ‘Jalwayu enclave ',
+    //   type: 'video'
+    // }, 
+
+    {
+      title: 'At Nirankari Samagam',
+      videoId: 'fcagGZBVf2k',
+      description: ' My own original ‘Guru Charna vich ho arpan’, which has over 1 million views. ',
+      type: 'video'
+    }, 
+    {
+      title: 'At Nirankari Samagam',
+      videoId: 'zb3c77OC-jQ',
+      description: 'Another soulful song ‘Kar tera deedar’ ',
+      type: 'video'
+    },
+    {
+      title: 'Rabb Manneya',
+      videoId: 'KTcDa-2toWw',
+      description: ' Here’s my first ever original- Rabb Manneya’ ',
+      type: 'video'
+    },
+   {
+      title: 'Baarish-Single by Shudhita',
+      videoId: 'kkTO3aGRNmo',
+      type: 'video',
+      description: 'Here’s my second original- Baarish’ which is a soulful song.',
     }
   ];
-
+  
   const additionalPress = [
     {
-      title: 'Musical connections: NextIIConnect Podcast with Zach Snow',
-      videoId: '7CmejIU4jG0',
+      title: 'Nazraan-Latest Released Single',
+      videoId: 'pE-ooTVqt6I',
       type: 'video'
     },
+{
+      title: 'At Chandigarh University',
+      videoSrc: '/videos/cuperformence.mp4',
+      description: 'Perfomed At Chandigarh University with a huge audience.',
+      type: 'mp4'
+    },
     {
-      title: 'MusicNL Pop Artist of the Year Nomination',
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      title: 'Tum-Single by Shudhita',
+      image: 'images/gallery/tumsong.jpg',
+      link:'https://open.spotify.com/track/2b0EOW81hPUIrWc7AhcGsg?si=9036c7f6b5e04297',
       type: 'image'
     },
-    {
-      title: 'Unlicensed Philosophy with Chuong Nguyen',
-      videoId: 'wMSEVArzIcQ',
-      type: 'video'
-    }
   ];
 
   return (
@@ -67,7 +139,7 @@ const PressSection = () => {
                 </a>
               ) : (
                 <div>
-                  <div className="aspect-video">
+                  <div className="aspect-video ">
                     <iframe
                       src={`https://www.youtube.com/embed/${item.videoId}`}
                       title={item.title}
@@ -98,6 +170,21 @@ const PressSection = () => {
                   </div>
                   <div className="p-4">
                     <p className="text-white text-sm font-medium">{item.title}</p>
+                  </div>
+                </div>
+              ) : item.type === 'mp4' ? (
+                <div>
+                  <div className="h-80 md:h-96">
+                    <video
+                      src={item.videoSrc}
+                      className="w-full h-full object-cover rounded-t-lg"
+                      controls
+                      controlsList="nodownload"
+                      preload="metadata"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-white text-sm font-medium">{item.description}</p>
                   </div>
                 </div>
               ) : (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono,Mr_Dafoe,Archivo_Narrow } from "next/font/google";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,8 +21,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Becca Bartlett",
-  description: "This is a Clone site",
+  title: "Shudhita",
+  description: "My EPK",
 };
 
 export default function RootLayout({
