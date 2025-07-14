@@ -1,18 +1,19 @@
 import React from 'react';
-
+import Image from 'next/image';
 const Page5 = () => {
   return (
     <section 
       id="merch" 
       className="py-20 relative"
-      style={{
-        backgroundImage: 'url("/images/gallery/merchbg.jpg")',
-            backgroundAttachment: 'fixed',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            width: '100%'
-      }}
     >
+      <Image
+        src="/images/gallery/merchbg.jpg"
+        alt="Merchandise background"
+        fill
+        className="object-cover object-center"
+        quality={90}
+        priority
+      />
       <div className="absolute inset-0 bg-black/0 bg-opacity-30"></div>
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

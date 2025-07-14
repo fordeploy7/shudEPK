@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, SkipBack, SkipForward } from "lucide-react";
-
+import Image from "next/image";
 interface Song {
   id: number;
   title: string;
@@ -32,7 +32,13 @@ const Listen: React.FC = () => {
             <div className="relative group">
               <div className="bg-gray-800 rounded-lg overflow-hidden">
                 <div className="aspect-square bg-gradient-to-br from-orange-400 to-red-600 flex items-center justify-center">
-                  <img src="/images/gallery/nazraan.jpg" alt="nazraan" />
+                  <Image 
+                    src="/images/gallery/nazraan.jpg" 
+                    alt="nazraan" 
+                    fill
+                    className="object-cover"
+                    quality={90}
+                  />
                 </div>
               </div>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -54,7 +60,13 @@ const Listen: React.FC = () => {
             <div className="relative group">
               <div className="bg-gray-800 rounded-lg overflow-hidden">
                 <div className="aspect-square bg-gradient-to-br from-blue-400 to-green-400 flex items-center justify-center">
-                  <img src="/images/gallery/baarish.jpg" alt="baarish" />
+                 <Image 
+                    src="/images/gallery/baarish.jpg" 
+                    alt="baarish" 
+                    fill
+                    className="object-cover"
+                    quality={90}
+                  />
                 </div>
               </div>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -65,9 +77,9 @@ const Listen: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                  <button className="border border-purple-400 text-purple-400 px-6 py-2 rounded hover:bg-purple-400 hover:text-black transition-colors">
-                    STREAM NOW!
-                  </button>
+                    <button className="border border-purple-400 text-purple-400 px-6 py-2 rounded hover:bg-purple-400 hover:text-black transition-colors">
+                      STREAM NOW!
+                    </button>
                   </a>
                 </div>
               </div>
@@ -77,23 +89,29 @@ const Listen: React.FC = () => {
           <div className="space-y-6">
             {/* Spotify Embed */}
             <div className="rounded-xl overflow-hidden">
-             <iframe 
-  data-testid="embed-iframe" 
-  style={{ borderRadius: "12px" }} 
-  src="https://open.spotify.com/embed/artist/0JefaKlCFCFu9LEzF9diAm?utm_source=generator" 
-  width="100%" 
-  height="352" 
-  frameBorder="0" 
-  allowFullScreen 
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-  loading="lazy"
-  title="Spotify Artist Embed"
-/>
+              <iframe
+                data-testid="embed-iframe"
+                style={{ borderRadius: "12px" }}
+                src="https://open.spotify.com/embed/artist/0JefaKlCFCFu9LEzF9diAm?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Spotify Artist Embed"
+              />
             </div>
 
             {/* Artist Photo */}
-            <div className="bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg aspect-square flex items-center justify-center">
-              <img src="/images/gallery/pfp.jpg" alt="pfp" />
+            <div className="bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg aspect-square flex items-center justify-center relative">
+              <Image 
+                src="/images/gallery/pfp.jpg" 
+                alt="pfp" 
+                fill
+                className="object-cover rounded-lg"
+                quality={90}
+              />
             </div>
           </div>
         </div>

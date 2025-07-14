@@ -1,15 +1,18 @@
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 import { archivo, dafoe } from '../lib/fonts';
-
+import Image from 'next/image';
 export default function BeccaBartlettPage() {
 
   return (
     <div className="bg-black min-h-screen lg:h-5/6 flex flex-col lg:flex-row" >
       <div className="w-full lg:w-1/2 relative order-1 lg:order-1">
-        <img 
-         src={`/images/artist/shudhita_home2.jpeg`}
-          alt="Becca Bartlett"
+         <Image 
+          src="/images/artist/shudhita_home2.jpeg"
+          alt="Shudhita"
+          width={800}
+          height={600}
           className="w-full h-64 sm:h-80 md:h-96 lg:w-5/6 lg:h-5/6 object-cover mx-auto lg:mt-10"
+          quality={90}
         />
       </div>
 

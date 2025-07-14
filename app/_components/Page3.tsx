@@ -3,7 +3,7 @@
 import PressSection from "./Press";
 import Listen from "./Listen";
 import { useState, FormEvent } from "react";
-
+import Image from "next/image";
 const ContactPage: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -28,6 +28,7 @@ const ContactPage: React.FC = () => {
           width: "100%",
         }}
       >
+        
         <div className="bg-transparent bg-opacity-70 py-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-white text-2xl md:text-3xl font-bold mb-4">
