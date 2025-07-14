@@ -1,5 +1,5 @@
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
-import { archivo } from '../layout';
+import { archivo, dafoe } from '../lib/fonts';
 
 export default function BeccaBartlettPage() {
 

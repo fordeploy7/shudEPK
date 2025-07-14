@@ -1,7 +1,7 @@
 import React from 'react';
 import { Instagram, Music, Facebook, Youtube, Volume2, Music2 } from 'lucide-react';
 import { FaSnapchatGhost } from 'react-icons/fa';
-import { dafoe } from '../layout';
+import { archivo, dafoe } from '../lib/fonts';
 
 const BeccaBartlettPage = () => {
   return (
