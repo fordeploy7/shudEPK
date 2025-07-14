@@ -117,7 +117,7 @@ const PressSection = () => {
     <section id="press-announcements" className="py-16 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-white text-center mb-12 uppercase tracking-wide">
-          Press/Announcements
+          Press/Anc.
         </h2>
 
         {/* Main press items */}
