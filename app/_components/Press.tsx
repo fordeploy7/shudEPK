@@ -371,8 +371,7 @@ const PressSection = () => {
           {pressItems.map((item, index) => (
             <div
               key={index}
-          ref={el => { mainItemsRef.current[index] = el; }}
-
+              ref={el => { mainItemsRef.current[index] = el; }}
               className="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
               style={{ willChange: 'transform' }}
             >
@@ -417,7 +416,7 @@ const PressSection = () => {
           {additionalPress.map((item, index) => (
             <div
               key={index}
-             ref={el => { additionalItemsRef.current[index] = el; }}
+              ref={el => { additionalItemsRef.current[index] = el; }}
               className="bg-gray-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
               style={{ willChange: 'transform' }}
             >
