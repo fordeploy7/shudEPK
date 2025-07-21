@@ -55,9 +55,9 @@ const PressSection = () => {
     // },
 
   {
-    title: 'I also have sung on two Punjabi movies',
+    title: 'I also have sung in two Punjabi movies',
       videoId: 'GIBqMWau_Nc',
-      description: 'I also have sung on two Punjabi movies:-One of them being ‘Painter’ in which i sang a duet with the one and only Kamal Khan ji. ',
+      description: 'I also have sung in two Punjabi movies:-One of them being ‘Painter’ in which i sang a duet with the one and only Kamal Khan ji. ',
       type: 'video'
     }, 
 //  {

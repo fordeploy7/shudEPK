@@ -306,7 +306,7 @@ With an impressive and diverse discography, Shudhita has collaborated with <span
               ref={(el) => addToHighlightRefs(el, 0)}
               className='text-red-800'
               style={{ willChange: 'transform, opacity' }}
-            >renowned producers IKKY on two widely loved club hits in the house music scene.</span> Her vocal presence has also graced the Punjabi film industry, lending her voice to <span 
+            >renowned Producer IKKY on two widely loved club hits in the house music scene.</span> Her vocal presence has also graced the Punjabi film industry, lending her voice to <span 
               ref={(el) => addToHighlightRefs(el, 1)}
               className='text-red-800'
               style={{ willChange: 'transform, opacity' }}
