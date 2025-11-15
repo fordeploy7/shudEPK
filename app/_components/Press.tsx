@@ -106,6 +106,12 @@ const PressSection = () => {
       type: 'mp4'
     },
     {
+      title: 'At SARAS Mela Ludhiana 2025 with huge Audience',
+      videoSrc: '/videos/sarasludhiana2025.mp4',
+      description: 'Perfomed At SARAS Mela Ludhiana 2025 with Huge Audience ',
+      type: 'mp4'
+    },
+    {
       title: 'Tum-Single by Shudhita',
       image: 'images/gallery/tumsong.jpg',
       link:'https://open.spotify.com/track/2b0EOW81hPUIrWc7AhcGsg?si=9036c7f6b5e04297',
