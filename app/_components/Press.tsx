@@ -67,18 +67,18 @@ const PressSection = () => {
     //   type: 'video'
     // }, 
 
-    {
-      title: 'At Nirankari Samagam',
-      videoId: 'fcagGZBVf2k',
-      description: ' My own original ‘Guru Charna vich ho arpan’, which has over 1 million views. ',
-      type: 'video'
-    }, 
-    {
-      title: 'At Nirankari Samagam',
-      videoId: 'zb3c77OC-jQ',
-      description: 'Another soulful song ‘Kar tera deedar’ ',
-      type: 'video'
-    },
+    // {
+    //   title: 'At Nirankari Samagam',
+    //   videoId: 'fcagGZBVf2k',
+    //   description: ' My own original ‘Guru Charna vich ho arpan’, which has over 1 million views. ',
+    //   type: 'video'
+    // }, 
+    // {
+    //   title: 'At Nirankari Samagam',
+    //   videoId: 'zb3c77OC-jQ',
+    //   description: 'Another soulful song ‘Kar tera deedar’ ',
+    //   type: 'video'
+    // },
     {
       title: 'Rabb Manneya',
       videoId: 'KTcDa-2toWw',
