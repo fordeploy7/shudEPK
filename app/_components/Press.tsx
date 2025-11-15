@@ -1,26 +1,41 @@
 import React from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 type VideoPress = {
   title: string;
   videoId: string;
-  description: string;
+  description?: string;
   type: 'video';
 };
 
 type Mp4Press = {
   title: string;
   videoSrc: string;
-  description: string;
+  description?: string;
   type: 'mp4';
 };
 
 type ImagePress = {
   title: string;
   image: string;
-  link: string;
+  link?: string;
   type: 'image';
 };
-type PressItem = VideoPress | ImagePress;
+
+type CarouselItem = {
+  type: 'mp4' | 'image';
+  src: string;
+  description?: string;
+};
+
+type CarouselPress = {
+  title: string;
+  carousel: CarouselItem[];
+  type: 'carousel';
+};
+
+type PressItem = VideoPress | Mp4Press | ImagePress | CarouselPress;
 const PressSection = () => {
   const pressItems:PressItem[] = [
     {
@@ -97,9 +112,10 @@ const PressSection = () => {
     {
       title: 'Nazraan-Latest Released Single',
       videoId: 'pE-ooTVqt6I',
+      description: "Nazraan-Latest Released Single",
       type: 'video'
     },
-{
+    {
       title: 'At Chandigarh University',
       videoSrc: '/videos/cuperformence.mp4',
       description: 'Perfomed At Chandigarh University with a huge audience.',
@@ -107,9 +123,16 @@ const PressSection = () => {
     },
     {
       title: 'At SARAS Mela Ludhiana 2025 with huge Audience',
-      videoSrc: '/videos/sarasludhiana2025.mp4',
-      description: 'Perfomed At SARAS Mela Ludhiana 2025 with Huge Audience ',
-      type: 'mp4'
+      carousel: [
+        { type: 'mp4', src: '/videos/sarasludhiana2025.mp4', description: 'Perfomed At SARAS Mela (Swipe to see more)' },
+        { type: 'mp4', src: '/videos/sarasvideo2.mp4', description: '(Swipe to see more)' },
+        { type: 'image', src: '/images/gallery/sarasimage1.jpg', description: '(Swipe to see more)' },
+         { type: 'mp4', src: '/videos/sarasvideo3.mp4', description: '(Swipe to see more)' },
+        { type: 'image', src: '/images/gallery/sarasimage2.jpg', description: '(Swipe to see more)' },
+        { type: 'image', src: '/images/gallery/sarasimage3.jpg', description: '(Swipe to see more)' },
+        { type: 'image', src: '/images/gallery/sarasimage4.jpg', description: '(Swipe to see more)' },
+      ],
+      type: 'carousel'
     },
     {
       title: 'Tum-Single by Shudhita',
@@ -143,7 +166,7 @@ const PressSection = () => {
                     <p className="text-white text-sm font-medium">{item.title}</p>
                   </div>
                 </a>
-              ) : (
+              ) : item.type === 'video' ? (
                 <div>
                   <div className="aspect-video ">
                     <iframe
@@ -157,7 +180,7 @@ const PressSection = () => {
                     <p className="text-white text-sm font-medium">{item.description}</p>
                   </div>
                 </div>
-              )}
+              ) : null}
             </div>
           ))}
         </div>
@@ -178,36 +201,68 @@ const PressSection = () => {
                     <p className="text-white text-sm font-medium">{item.title}</p>
                   </div>
                 </div>
-              ) : item.type === 'mp4' ? (
+              ) : item.type === 'carousel' && Array.isArray(item.carousel) ? (
                 <div>
-                  <div className="h-80 md:h-96">
+                  <div className="aspect-video bg-black">
+                    <Swiper spaceBetween={10} slidesPerView={1}>
+                      {item.carousel.map((slide, idx) => (
+                        <SwiperSlide key={idx}>
+                          {slide.type === 'mp4' ? (
+                            <video
+                              src={slide.src}
+                              className="w-full h-full object-contain rounded-t-lg bg-black"
+                              controls
+                              controlsList="nodownload"
+                              preload="metadata"
+                              style={{ backgroundColor: 'black' }}
+                            />
+                          ) : (
+                            <img
+                              src={slide.src}
+                              alt={slide.description}
+                              className="w-full h-full object-cover rounded-t-lg"
+                            />
+                          )}
+                          <div className="p-2 text-white text-xs">{slide.description}</div>
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-white text-sm font-medium">{item.title}</p>
+                  </div>
+                </div>
+              ) : item.type === 'mp4' && 'videoSrc' in item ? (
+                <div>
+                  <div className="aspect-video bg-black">
                     <video
-                      src={item.videoSrc}
-                      className="w-full h-full object-cover rounded-t-lg"
+                      src={(item as Mp4Press).videoSrc}
+                      className="w-full h-full object-contain rounded-t-lg bg-black"
                       controls
                       controlsList="nodownload"
                       preload="metadata"
+                      style={{ backgroundColor: 'black' }}
                     />
                   </div>
                   <div className="p-4">
-                    <p className="text-white text-sm font-medium">{item.description}</p>
+                    <p className="text-white text-sm font-medium">{(item as Mp4Press).description ?? ''}</p>
                   </div>
                 </div>
-              ) : (
+              ) : item.type === 'video' && 'videoId' in item ? (
                 <div>
                   <div className="aspect-video">
                     <iframe
-                      src={`https://www.youtube.com/embed/${item.videoId}`}
+                      src={`https://www.youtube.com/embed/${(item as VideoPress).videoId}`}
                       title={item.title}
                       className="w-full h-full"
                       allowFullScreen
                     />
                   </div>
                   <div className="p-4">
-                    <p className="text-white text-sm font-medium">{item.title}</p>
+                    <p className="text-white text-sm font-medium">{(item as VideoPress).description ?? ''}</p>
                   </div>
                 </div>
-              )}
+              ) : null}
             </div>
           ))}
         </div>
