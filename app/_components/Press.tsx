@@ -130,7 +130,7 @@ const PressSection = () => {
          { type: 'mp4', src: '/videos/sarasvideo3.mp4', description: '(Swipe to see more)' },
         { type: 'image', src: '/images/gallery/sarasimage2.jpg', description: '(Swipe to see more)' },
         { type: 'image', src: '/images/gallery/sarasimage3.jpg', description: '(Swipe to see more)' },
-        { type: 'image', src: '/images/gallery/sarasimage4.jpg', description: '(Swipe to see more)' },
+        { type: 'image', src: '/images/gallery/sarasimage4.jpg', description: '' },
       ],
       type: 'carousel'
     },
