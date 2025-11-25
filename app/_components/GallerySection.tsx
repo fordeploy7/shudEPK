@@ -1,31 +1,46 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { client } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
+
+type GalleryImage = {
+  _id: string;
+  title: string;
+  image: any;
+  orientation: 'landscape' | 'portrait';
+  order: number;
+};
 
 const PhotoGallery = () => {
   const containerRef = useRef(null);
   const gridItemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [images, setImages] = useState<GalleryImage[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const images = [
-    { thumb: "/images/gallery/achihai.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/baarish.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/yobaby.jpg", orientation: "portrait" },
-    { thumb: "/images/gallery/pyaarkiyahai.jpg", orientation: "portrait" },
-    { thumb: "/images/gallery/javansirhind.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/mulaqat.jpg", orientation: "portrait" },
-    // { thumb: "/images/gallery/onenessTalks.jpg", orientation: "portrait" },
-    { thumb: "/images/gallery/performedatCU.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/tumsong.jpg", orientation: "portrait" },
-    // { thumb: "/images/gallery/onenesstalks2.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/pfp.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/nazraan.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/heer.jpg", orientation: "portrait" },
-    { thumb: "/images/gallery/ishqhua.jpg", orientation: "landscape" },
-    { thumb: "/images/gallery/pfp3.jpg", orientation: "portrait" },
-    { thumb: "/images/gallery/aasma.jpg", orientation: "portrait" },
-    { thumb: "/images/gallery/pfp5.jpg", orientation: "portrait" },
-  ];
+  useEffect(() => {
+    fetchGalleryImages();
+  }, []);
+
+  const fetchGalleryImages = async () => {
+    try {
+      const query = `*[_type == "gallery" && isActive == true] | order(order asc) {
+        _id,
+        title,
+        image,
+        orientation,
+        order
+      }`;
+
+      const data = await client.fetch(query);
+      setImages(data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching gallery images:', error);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     const loadGSAP = async () => {
@@ -69,6 +84,20 @@ const PhotoGallery = () => {
     };
   }, []);
 
+  if (loading) {
+    return (
+      <div ref={containerRef} className="min-h-screen bg-black p-4" id="gallery">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold text-white mb-4">Photo Gallery</h1>
+            <p className="text-slate-400 text-lg">A collection of beautiful images</p>
+          </div>
+          <div className="text-white text-center">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div ref={containerRef} className="min-h-screen bg-black p-4" id="gallery">
       <div className="max-w-7xl mx-auto">
@@ -80,13 +109,13 @@ const PhotoGallery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {images.map((image, index) => (
             <div
-              key={image.thumb}
+              key={image._id}
               ref={el => { gridItemRefs.current[index] = el; }}
               className="relative aspect-square group overflow-hidden rounded-lg will-change-transform"
             >
               <Image
-                src={image.thumb}
-                alt={`Gallery image ${index + 1}`}
+                src={urlFor(image.image).width(600).height(600).url()}
+                alt={image.title}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
                 quality={90}

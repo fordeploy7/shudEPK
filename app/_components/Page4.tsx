@@ -1,5 +1,4 @@
 import GallerySection from "./GallerySection"
-import PressSection from "./Press"
 import Image from "next/image"
 const Page3 = () => {
   return (
