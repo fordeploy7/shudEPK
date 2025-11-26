@@ -252,7 +252,7 @@ const PressSection = () => {
                             />
                           ) : slide.itemType === 'image' && slide.image ? (
                             <img
-                              src={urlFor(slide.image).width(800).height(450).url()}
+                              src={urlFor(slide.image).width(800).height(970).url()}
                               alt={slide.description || ''}
                               className="w-full h-full object-cover rounded-t-lg"
                             />
